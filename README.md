@@ -13,4 +13,4 @@ Fist, make sure you installed python alone side some packages:
 
 Then you can start on either run python file [image-encryptor-gui.py](image-encryptor-gui.py) to work with a Desktop Application or import [image-encryptor-lib.py](image-encryptor-lib.py) to use the utilities in your own program.
 ## Licence
-This project is licensed under the GPL License - see the [LICENCE](LICENCE.txt) file for details.
+This project is licensed under the GPL License - see the [LICENCE](LICENCE) file for details.
