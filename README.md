@@ -1,1 +1,1 @@
-# image-encryptor
+# Python PNG Image Information Imbed 
