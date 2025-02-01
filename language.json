@@ -1,0 +1,64 @@
+{
+    "zh":[
+        "PNG 隐写术工具",
+        "图片显示区",
+        "请输入加密/解密密钥",
+        "请输入需要隐藏的信息",
+        "选择文件",
+        "选择初始PNG文件",
+        "选择加密PNG文件",
+        "选择输出路径",
+        "把文件隐藏到PNG",
+        "提取PNG中的隐藏文件",
+
+
+
+        "文件已选择",
+        "保存信息",
+        "信息已保存",
+        "以文件形式保存解密信息",
+        "已保存",
+        "未检测到信息\n(可能没有保存?)",
+        "初始图像",
+
+
+        "保存初始图像文件",
+        "保存加密图像文件",
+        "无图像可以保存",
+
+
+        "无图像可以加密",
+        "无图像可以解密"
+    ],
+    "en":[
+        "Image Information Encryptor",
+        "Image Dispaly Area",
+        "Enter seed",
+        "Enter text which you want to hide",
+        "Select File",
+        "Select Raw Image File",
+        "Select Encrypted Image File",
+        "select output path",
+        "Encrypt",
+        "Decrypt",
+
+        "File Selected",
+        "Save Text",
+        "Text Saved",
+        "Save decrypted info as file",
+        "Saved",
+        "No message detected\n(maybe forget to save it?)",
+        "Raw Image",
+        "Encrypted Image",
+
+
+        "Save Raw Image File",
+        "Save Encrypted Image File",
+        "No Image Could be saved",
+
+
+        "No Image Could be encrypted",
+        "No Image Could be decrypted"
+    ]
+}
+
