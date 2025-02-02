@@ -27,7 +27,7 @@ def select_png_file(purpose: str) -> str:
     while True:
         try:
             file_path = filedialog.askopenfilename(
-                title=f"请选择用于{purpose}的PNG文件",
+                title=purpose,
                 filetypes=[("PNG Files", "*.png")]
             )
             if not file_path:
@@ -38,11 +38,11 @@ def select_png_file(purpose: str) -> str:
         except ValueError as e:
             print(f"错误：{e}")
 
-def select_encrypted_png_file() -> str:
+def select_encrypted_png_file(purpose) -> str:
     while True:
         try:
             file_path = filedialog.askopenfilename(
-                title="请选择包含加密数据的PNG文件",
+                title=purpose,
                 filetypes=[("PNG Files", "*.png")]
             )
             if not file_path:
@@ -76,19 +76,19 @@ def select_encrypted_png_file() -> str:
             print(error_msg)
             continue  
 
-def select_any_file() -> str:
+def select_any_file(purpose) -> str:
     while True:
-        file_path = filedialog.askopenfilename(title="请选择要隐藏的文件")
+        file_path = filedialog.askopenfilename(title=purpose)
         if file_path:
             print(f"已选择文件：{file_path}")
             return file_path
         else:
             return
 
-def select_output_dir() -> str:
+def select_output_dir(purpose) -> str:
 
     while True:
-        dir_path = filedialog.askdirectory(title="请选择输出文件夹")
+        dir_path = filedialog.askdirectory(title=purpose)
         if dir_path:
             print(f"输出目录：{dir_path}")
             return dir_path
@@ -227,5 +227,5 @@ def extract_files_from_png(png_path: str, output_dir: str, key) -> None:
 
         extracted_files += 1
 
-    print(f"提取完成，共提取 {extracted_files} 个文件。")
+    print(f"提取完成，提取数量：{extracted_files}")
 
