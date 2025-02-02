@@ -7,28 +7,19 @@
         "选择文件",
         "选择初始PNG文件",
         "选择加密PNG文件",
-        "选择输出路径",
+        "请选择输出路径",
         "把文件隐藏到PNG",
         "提取PNG中的隐藏文件",
-
-
-
-        "文件已选择",
-        "保存信息",
-        "信息已保存",
-        "以文件形式保存解密信息",
-        "已保存",
-        "未检测到信息\n(可能没有保存?)",
-        "初始图像",
-
-
-        "保存初始图像文件",
-        "保存加密图像文件",
-        "无图像可以保存",
-
-
-        "无图像可以加密",
-        "无图像可以解密"
+        "请选择要隐藏的文件",
+        "请选择输出文件夹",
+        "成功",
+        "错误",
+        "未选择路径",
+        "已选择路径",
+        "该文件不包含有效加密数据",
+        "请选择 PNG 文件和输出路径",
+        "文件已保存"
+        
     ],
     "en":[
         "Image Information Encryptor",
@@ -38,27 +29,18 @@
         "Select File",
         "Select Raw Image File",
         "Select Encrypted Image File",
-        "select output path",
+        "Please select output path",
         "Encrypt",
         "Decrypt",
-
-        "File Selected",
-        "Save Text",
-        "Text Saved",
-        "Save decrypted info as file",
-        "Saved",
-        "No message detected\n(maybe forget to save it?)",
-        "Raw Image",
-        "Encrypted Image",
-
-
-        "Save Raw Image File",
-        "Save Encrypted Image File",
-        "No Image Could be saved",
-
-
-        "No Image Could be encrypted",
-        "No Image Could be decrypted"
+        "Select the file to encrypt",
+        "Select the outputing folder",
+        "Success",
+        "Error",
+        "Path not choosen",
+        "Path choosen",
+        "This file does not contain any encrypted information",
+        "Please select PNG file and output path",
+        "File saved to"
     ]
 }
 
