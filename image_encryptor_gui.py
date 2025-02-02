@@ -76,39 +76,39 @@ class PNGSteganographyApp(QWidget):
         self.output_directory = None
 
     def select_file(self):
-        self.selected_file = select_any_file()
+        self.selected_file = select_any_file(lang[10])
         self.message_input.clear() 
         if self.selected_file:
-            QMessageBox.information(self, "文件选择", f"已选择文件: {self.selected_file}")
+            QMessageBox.information(self, lang[12], f"{lang[15]}: {self.selected_file}")
         else:
-            QMessageBox.information(self, "Error", "未选择路径")
+            QMessageBox.information(self, lang[13], lang[14])
 
     def select_png(self):
-        self.selected_png = select_png_file("隐藏文件")
+        self.selected_png = select_png_file(lang[5])
         self.display_image(self.selected_png)
         if self.selected_png:
-            QMessageBox.information(self, "PNG 选择", f"已选择 PNG 文件: {self.selected_png}")
+            QMessageBox.information(self, lang[12], f"{lang[15]}: {self.selected_png}")
             self.selected_encrypted_png = None  
         else:
             if  self.display_image(self.selected_png) == 1:
-                QMessageBox.information(self,"Error", "该文件不包含有效加密数据")
-            QMessageBox.information(self, "Error", "未选择路径")
+                QMessageBox.information(self,lang[13], lang[16])
+            QMessageBox.information(self, lang[13], lang[14])
 
     def select_encrypted_png(self):
-        self.selected_encrypted_png = select_encrypted_png_file()   
+        self.selected_encrypted_png = select_encrypted_png_file(lang[6])  
         self.display_image(self.selected_encrypted_png)
         if self.selected_encrypted_png:
-            QMessageBox.information(self, "加密 PNG 选择", f"已选择加密 PNG 文件: {self.selected_encrypted_png}")
+            QMessageBox.information(self, lang[12], f"{lang[15]}: {self.selected_encrypted_png}")
             self.selected_png = None  
         else:
-            QMessageBox.information(self, "Error", "未选择路径")
+            QMessageBox.information(self, lang[13], lang[14])
 
     def select_output(self):
-        self.output_directory = select_output_dir()
+        self.output_directory = select_output_dir(lang[11])
         if self.output_directory:
-            QMessageBox.information(self, "输出路径", f"已选择输出路径: {self.output_directory}")
+            QMessageBox.information(self, lang[12], f"{lang[15]}: {self.output_directory}")
         else:
-            QMessageBox.information(self, "Error", "未选择路径")
+            QMessageBox.information(self, lang[13], lang[14])
 
     def encrypt_png(self):
         user_key = self.key_input.text().strip()
@@ -118,10 +118,10 @@ class PNGSteganographyApp(QWidget):
         encryption_key = generate_encryption_key(user_key)
 
         if not self.selected_png:
-            QMessageBox.warning(self, "Error", "请选择 PNG 文件和输出路径")
+            QMessageBox.warning(self, lang[13], lang[17])
             return
         if not self.output_directory:
-            QMessageBox.warning(self, "Error", "请选择输出路径")
+            QMessageBox.warning(self, lang[13], lang[7])
             return
         if self.selected_file:
             data = self.selected_file
@@ -130,14 +130,14 @@ class PNGSteganographyApp(QWidget):
             data = self.message_input.toPlainText().strip()
             judgment = 1
             if not data:
-                QMessageBox.warning(self, "Error", "请输入要隐藏的信息或选择文件")
+                QMessageBox.warning(self, lang[13], lang[3])
                 return
 
         output_png = os.path.join(self.output_directory, f"hidden_{int(time.time())}.png")
         hide_file_in_png(self.selected_png, data, output_png, encryption_key, judgment)
 
         self.display_image(output_png)
-        QMessageBox.information(self, "成功", f"文件已隐藏到 PNG: {output_png}")
+        QMessageBox.information(self, lang[12], f"{lang[18]}: {output_png}")
 
     def decrypt_png(self):
         user_key = self.key_input.text().strip()
@@ -147,13 +147,13 @@ class PNGSteganographyApp(QWidget):
         encryption_key = generate_encryption_key(user_key)
 
         if not self.selected_encrypted_png:
-            QMessageBox.warning(self, "Error", "请选择加密 PNG 文件")
+            QMessageBox.warning(self, lang[13], lang[6])
             return
         if self.output_directory:
-            QMessageBox.warning(self, "Error", "请选择输出路径")
+            QMessageBox.warning(self, lang[13],lang[7])
             return
         extract_files_from_png(self.selected_encrypted_png, self.output_directory, encryption_key)
-        QMessageBox.information(self, "成功", f"文件已解密并保存到: {self.output_directory}")
+        QMessageBox.information(self, lang[12], f"{lang[18]}: {self.output_directory}")
 
     def clear_file_path(self):
         if self.message_input.toPlainText():
@@ -164,7 +164,7 @@ class PNGSteganographyApp(QWidget):
             pixmap = QPixmap(image_path)
             self.image_label.setPixmap(pixmap.scaled(self.image_label.width(), self.image_label.height()))
         else:
-            self.image_label.setText("图片显示区")
+            self.image_label.setText(lang[1])
 
 
 if __name__ == "__main__":
